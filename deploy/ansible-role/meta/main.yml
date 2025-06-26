@@ -1,0 +1,23 @@
+# roles/scw_sd_exporter/meta/main.yml
+---
+galaxy_info:
+  author: sudo-bngz
+  description: Deploys the scw-sd (Scaleway Prometheus service discovery) binary as a systemd service
+  license: MIT
+  min_ansible_version: "2.9"
+  platforms:
+    - name: Debian
+      versions:
+        - bullseye
+        - bookworm
+    - name: Ubuntu
+      versions:
+        - focal
+        - jammy
+  galaxy_tags:
+    - prometheus
+    - scaleway
+    - service-discovery
+    - monitoring
+
+dependencies: []
