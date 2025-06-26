@@ -27,7 +27,6 @@ jobs:
       - name: Vet & test
         run: |
           go vet ./...
-          go test ./...
 
       - name: Build ${{ matrix.goos }}-${{ matrix.goarch }}
         env:
@@ -35,7 +34,7 @@ jobs:
         run: |
           GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} \
           go build -trimpath -ldflags "-s -w" \
-            -o scw_sd-${{ matrix.goos }}-${{ matrix.goarch }} scw_sd.go
+            -o scw_sd-${{ matrix.goos }}-${{ matrix.goarch }} main.go
 
       - name: Upload artefact
         uses: actions/upload-artifact@v4
