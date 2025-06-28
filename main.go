@@ -27,6 +27,7 @@ type serverDetail struct {
 	Network struct {
 		IP []string `json:"ip"`
 	} `json:"network"`
+	Tags []string `json:"tags"`
 }
 
 type target struct {
@@ -85,9 +86,13 @@ func handleSD(w http.ResponseWriter, _ *http.Request) {
 		if len(detail.Network.IP) == 0 {
 			continue
 		}
+		labels := map[string]string{"server_id": sid}
+		for _, t := range detail.Tags {
+			labels["tag_"+t] = "1"
+		}
 		result = append(result, target{
 			Targets: []string{detail.Network.IP[0] + ":9100"},
-			Labels:  map[string]string{"server_id": sid},
+			Labels:  labels,
 		})
 	}
 
