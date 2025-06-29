@@ -38,6 +38,15 @@ Example response:
 ]
 ```
 
+## Running with Docker
+
+```bash
+docker build -t scw-sd .
+docker run -e ONLINE_API_TOKEN=xxxx -p 8000:8000 scw-sd
+```
+
+Set `PORT` to change the listening port if you need something other than the default `8000`.
+
 ---
 
 ## Prometheus config
