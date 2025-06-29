@@ -103,4 +103,4 @@ PRs welcome!
 
 ## License
 
-MIT © 2025 — SUDO
+Licensed under the [MIT License](LICENSE).
