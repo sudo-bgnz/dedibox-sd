@@ -23,6 +23,21 @@ export ONLINE_API_TOKEN=xxxxxx
 
 Visit [http://server:8000/scw-sd](http://server:8000/scw-sd) – you should see JSON targets.
 
+Example response:
+
+```json
+[
+  {
+    "targets": ["203.0.113.1:9100"],
+    "labels": {
+      "server_id": "12345",
+      "tag_web": "1",
+      "tag_prod": "1"
+    }
+  }
+]
+```
+
 ---
 
 ## Prometheus config

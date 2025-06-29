@@ -1,7 +1,0 @@
-- name: Reload systemd
-  command: systemctl daemon-reexec
-
-- name: Restart scw-sd
-  systemd:
-    name: scw-sd
-    state: restarted
