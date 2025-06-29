@@ -83,6 +83,11 @@ func handleSD(w http.ResponseWriter, _ *http.Request) {
 			log.Printf("warn: %v", err)
 			continue
 		}
+		if len(detail.Tags) == 0 {
+			if err := apiGET(detailPath+"/tags", &detail.Tags); err != nil {
+				log.Printf("warn: %v", err)
+			}
+		}
 		if len(detail.Network.IP) == 0 {
 			continue
 		}
